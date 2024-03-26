@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    margin-bottom: 50px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 150px 300px;
+    gap: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    width: 18rem;
+}
