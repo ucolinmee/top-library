@@ -11,24 +11,32 @@
     <h1>My Library</h1>
     <button id="open-form" type="button" class="btn btn-outline-primary">Add Book</button>
 
-    <form class="hidden" action="/" method="post">
-        <label for="title">Book Title</label>
-        <input type="text" name="title" id="title">
+    <dialog id="modal">
+        <form action="" id="addBookForm">
+            <div class="form-grid">
+                <label for="title">Book Title</label>
+                <input type="text" name="title" id="title" required>
 
-        <label for="author">Book Author</label>
-        <input type="text" name="author" id="author">
+                <label for="author">Book Author</label>
+                <input type="text" name="author" id="author" required>
 
-        <label for="num-pages">Number of Pages</label>
-        <input type="number" name="num-pages" id="num-pages">
+                <label for="num-pages">Number of Pages</label>
+                <input type="number" name="num-pages" id="num-pages" required>
 
-        <label for="already-read">Read Yet?</label>
-        <input type="checkbox" name="already-read" id="already-read">
+                <label for="already-read">Read Yet?</label>
+                <input type="checkbox" name="already-read" id="already-read">
+            </div>
 
-        <button type="button" class="btn btn-outline-primary">Submit</button>
-    </form>
+            <div class="form-buttons">
+                <button id="submit-form" type="submit" class="btn btn-primary form-btn">Submit</button>
+                <button id="close-form" type="reset" class="btn btn-outline-primary form-btn">Close</button>
+            </div>
+            
+        </form>
+    </dialog>
     
     <div class="books"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="index.js"></script>
 </html>
