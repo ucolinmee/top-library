@@ -17,7 +17,6 @@ function Book(id, title, author, pages, read) {
         return this.title + " by " + this.author + ", " + this.pages + " pages, " + this.read;
     }
 }
-
 function addBookToLibrary(book) {
     myLibrary.push(book);
 }
@@ -143,15 +142,23 @@ document.getElementById("close-form").addEventListener("click", closeModal)
 document.getElementById("submit-form").addEventListener("click", (e) => {
     e.preventDefault();
     
-    var bookTitle = document.getElementById('title').value;
-    var bookAuthor = document.getElementById('author').value;
-    var bookPages = document.getElementById('num-pages').value;
-    var read = document.getElementById('already-read').checked;
+    var bookTitle = document.getElementById('title');
+    var bookAuthor = document.getElementById('author');
+    var bookPages = document.getElementById('num-pages');
+    var read = document.getElementById('already-read');
 
-    var newBook = new Book(getNextBookId(), bookTitle, bookAuthor, bookPages, read);
-    addBook(newBook)
+    if (!bookTitle.checkValidity() || 
+    !bookAuthor.checkValidity() ||
+    !bookPages.checkValidity() || 
+    !read.checkValidity) {
+        alert('Form is missing info, please check that all fields are filled.')
+    }
+    else {
+        var newBook = new Book(getNextBookId(), bookTitle.value, bookAuthor.value, bookPages.value, read.checked);
+        addBook(newBook)
 
-    closeModal();
+        closeModal();
+    }
 })
 
 // DOM event delegation
